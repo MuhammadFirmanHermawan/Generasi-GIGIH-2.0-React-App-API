@@ -1,0 +1,38 @@
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+}
+ul {
+  list-style-type: none;
+}
+li {
+  list-style-type: none;
+}
+.music {
+  border: 2px solid white;
+  margin-top: 20px;
+}
+.music-img {
+  width: 200px;
+  height: 200px;
+}
+#music {
+  font-size: medium;
+}
+#button {
+  background-color: green;
+  opacity: 0.8;
+  border: 0;
+  border-radius: 3px;
+  color: white;
+  font-size: 15px;
+  padding: 8px;
+}
+#button:hover {
+  opacity: 1;
+}
