@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./src/App.js"],
+  content: ["./src/components/spotify-app/index.js"],
   theme: {
     extend: {
       colors: {

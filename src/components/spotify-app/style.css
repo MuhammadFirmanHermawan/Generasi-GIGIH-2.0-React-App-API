@@ -1,0 +1,53 @@
+.login {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-login {
+  color: white;
+  background-color: #1ed760;
+  border-radius: 100px;
+  padding: 10px 100px;
+}
+.button-login:hover {
+  background-color: #383838;
+}
+.button-search {
+  color: white;
+  background-color: #1ed760;
+  padding: 10px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.button-search:hover {
+  background-color: #383838;
+}
+.input {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+.spotify-card {
+  background-color: #2b2b2b;
+  padding: 30px 30px;
+  display: flexbox;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.spotify-card:hover {
+  background-color: #383838;
+}
+.select {
+  background-color: #1ed760;
+  color: white;
+  padding: 5px 20px;
+  border-radius: 50px;
+  margin-top: 20px;
+  opacity: 0.8;
+}
+.select:hover {
+  opacity: 1;
+}
