@@ -4,9 +4,9 @@ import "./style.css";
 const axios = require("axios");
 
 function Spotify() {
-  const [access_token, set_access_token] = useState(null);
-  const [query, set_query] = useState("");
-  const [tracks, set_tracks] = useState([]);
+  const [access_token, setAccessToken] = useState(null);
+  const [query, setQuery] = useState("");
+  const [tracks, setTracks] = useState([]);
   const [selectedTrack, setSelectedTrack] = useState([]);
   const [selected, setSelected] = useState(false);
 
@@ -33,17 +33,16 @@ function Spotify() {
   const Form = () => {
     return (
       <div className="w-full">
-        <label>
-          <input
-            onChange={(event) => {
-              set_query(event.target.value);
-            }}
-            value={query}
-            type="text"
-            className="input"
-            placeholder="Type anything..."
-          ></input>
-        </label>
+        <input
+          onChange={(e) => {
+            setQuery(e.target.value);
+          }}
+          value={query}
+          type="text"
+          className="input"
+          placeholder="Type anything..."
+        ></input>
+
         <button
           onClick={() => {
             handleClick();
@@ -84,7 +83,7 @@ function Spotify() {
           },
         })
         .then((res) => {
-          set_tracks(res.data.tracks.items);
+          setTracks(res.data.tracks.items);
         });
     } catch (err) {
       console.error(err);
@@ -107,11 +106,11 @@ function Spotify() {
   useEffect(() => {
     let params = getHashParams();
     let token = params.access_token;
-    set_access_token(token);
+    setAccessToken(token);
 
     if (!setSelectedTrack) {
       const selectedTrack = filterSelectedTrack();
-      set_tracks(selectedTrack);
+      setTracks(selectedTrack);
     }
   }, [selectedTrack]);
   const filterSelectedTrack = () => {
