@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Input, Button } from "@chakra-ui/react";
 import "./style.css";
 
 const axios = require("axios");
@@ -23,34 +24,38 @@ function Spotify() {
 
     return (
       <div className="login">
-        <a href={spotify_url} className="button-login">
-          LOG IN
-        </a>
+        <Button colorScheme="green" color="white">
+          <a href={spotify_url} className="button-login">
+            LOG IN
+          </a>
+        </Button>
       </div>
     );
   };
 
   const Form = () => {
     return (
-      <div className="w-full">
-        <input
+      <div className="form-search">
+        <Input
           onChange={(e) => {
             setQuery(e.target.value);
           }}
           value={query}
           type="text"
-          className="input"
           placeholder="Type anything..."
-        ></input>
-
-        <button
+          width="30%"
+          color="white"
+        />
+        <Button
           onClick={() => {
             handleClick();
           }}
           className="button-search"
+          colorScheme="green"
+          color="white"
         >
           <i className="fa fa-search"></i>
-        </button>
+        </Button>
       </div>
     );
   };
@@ -61,14 +66,14 @@ function Spotify() {
   const Track = (props) => {
     return (
       <div className="spotify-card">
-        <img src={props.image_url} title={props.album_name} alt="{props.album_name}" className="object-cover rounded h-40 w-full" />
-        <p className="text-base mt-2 mb-1 font-bold text-gray-100">{props.track_title}</p>
-        <div className="">
-          <p className="text-sm text-gray-300">{props.artist_name}</p>
+        <img src={props.image_url} title={props.album_name} alt="{props.album_name}" className="img-card" />
+        <p className="title-card">{props.track_title}</p>
+        <div>
+          <p className="artist-title">{props.artist_name}</p>
         </div>
-        <button className={`select ${selected ? "btn-primary" : "btn-secondary"}`} onClick={handleSelect}>
-          {selected ? "Deselect" : "Select"}
-        </button>
+        <Button className={`select ${selected ? "btn-primary" : "btn-secondary"}`} onClick={handleSelect} colorScheme="green">
+          {selected ? "Deselect" : "Selected"}
+        </Button>
       </div>
     );
   };
@@ -128,12 +133,12 @@ function Spotify() {
   };
 
   return (
-    <div className="bg-dark_main min-h-screen p-5">
+    <div className="login-halaman">
       {!access_token && <LoginButton />}
 
       {access_token && <Form />}
 
-      <div className="mt-5 flex flex-wrap">
+      <div className="dashboard">
         {tracks.map((item) => {
           return <Track key={item.album.id} image_url={item.album.images[0].url} track_title={item.name} artist_name={item.album.artists[0].name} album_name={item.album.name} toggleSelect={() => toggleSelect(tracks)} />;
         })}
