@@ -4,7 +4,7 @@ import { Button } from "@chakra-ui/react";
 const LoginButton = () => {
   let client_id = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
   let scope = "playlist-modify-private";
-  let redirect_uri = "https://generasi-gigih-2-0-react-js.vercel.app/";
+  let redirect_uri = "https://generasi-gigih-2-0-react-ogsiy5ewn-muhammadfirmanhermawan.vercel.app";
 
   let spotify_url = "https://accounts.spotify.com/authorize";
   spotify_url += "?response_type=token";
