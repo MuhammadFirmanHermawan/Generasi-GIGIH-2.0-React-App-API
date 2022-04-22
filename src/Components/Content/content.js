@@ -13,7 +13,7 @@ function Content() {
   const LoginButton = () => {
     let client_id = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
     let scope = "playlist-modify-private";
-    let redirect_uri = "http://localhost:3000/";
+    let redirect_uri = "https://generasi-gigih-2-0-react-kc4uhfy28-muhammadfirmanhermawan.vercel.app";
 
     let spotify_url = "https://accounts.spotify.com/authorize";
     spotify_url += "?response_type=token";
