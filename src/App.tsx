@@ -1,13 +1,11 @@
 import React from "react";
-import "./App.css";
-import "./components/spotify-app/style.css";
-import Spotify from "./components/spotify-app/index";
 import { ChakraProvider } from "@chakra-ui/react";
+import Content from "./Components/Content/content";
 
 function App() {
   return (
     <ChakraProvider>
-      <Spotify />
+      <Content />
     </ChakraProvider>
   );
 }

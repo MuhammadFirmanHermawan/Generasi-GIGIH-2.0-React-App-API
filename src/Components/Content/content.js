@@ -1,37 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Input, Button } from "@chakra-ui/react";
-import "./style.css";
+import { Button, Input } from "@chakra-ui/react";
+import LoginButton from "../Login/login";
+import "./content.css";
 
 const axios = require("axios");
-
-function Spotify() {
+function Content() {
   const [access_token, setAccessToken] = useState(null);
   const [query, setQuery] = useState("");
   const [tracks, setTracks] = useState([]);
   const [selectedTrack, setSelectedTrack] = useState([]);
   const [selected, setSelected] = useState(false);
-
-  const LoginButton = () => {
-    let client_id = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
-    let scope = "playlist-modify-private";
-    let redirect_uri = "http://localhost:3000";
-
-    let spotify_url = "https://accounts.spotify.com/authorize";
-    spotify_url += "?response_type=token";
-    spotify_url += "&client_id=" + encodeURIComponent(client_id);
-    spotify_url += "&scope=" + encodeURIComponent(scope);
-    spotify_url += "&redirect_uri=" + encodeURIComponent(redirect_uri);
-
-    return (
-      <div className="login">
-        <Button colorScheme="green" color="white">
-          <a href={spotify_url} className="button-login">
-            LOG IN
-          </a>
-        </Button>
-      </div>
-    );
-  };
 
   const Form = () => {
     return (
@@ -118,6 +96,7 @@ function Spotify() {
       setTracks(selectedTrack);
     }
   }, [selectedTrack]);
+
   const filterSelectedTrack = () => {
     return Track.filter((tracks) => selectedTrack.includes(tracks.uri));
   };
@@ -147,4 +126,4 @@ function Spotify() {
   );
 }
 
-export default Spotify;
+export default Content;

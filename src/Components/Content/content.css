@@ -1,9 +1,16 @@
+html {
+  background-color: black;
+}
 .login {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 500px;
 }
+.login-halaman {
+  background-color: black;
+}
+
 .button-search {
   margin-left: 5px;
   margin-top: -5px;
@@ -12,7 +19,6 @@
 .form-search {
   padding: 50px 50px;
 }
-
 .spotify-card {
   background-color: #2b2b2b;
   color: white;
@@ -27,7 +33,4 @@
 }
 .spotify-card:hover {
   background-color: #383838;
-}
-.login-halaman {
-  background-color: black;
 }
